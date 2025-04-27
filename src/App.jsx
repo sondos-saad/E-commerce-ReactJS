@@ -1,6 +1,7 @@
 import {BrowserRouter} from 'react-router-dom'
 import './App.css'
 import Nav from './Components/nav'
+import Rout from './Components/Rout'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
         <BrowserRouter>
             <Nav/>
+            <Rout/>
         </BrowserRouter>
     </>
   )
