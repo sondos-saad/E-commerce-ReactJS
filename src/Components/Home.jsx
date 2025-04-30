@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import videoLap from '../assets/videoLaptop.mp4'
 import { Link } from 'react-router-dom'
 import HomeProduct from './HomeProducts'
+import { IoMdEye } from "react-icons/io";
+import { FaHeart } from "react-icons/fa";
 
 function Home() {
     const [trendingProduct, setTrendingProduct]=useState(HomeProduct)
@@ -30,14 +32,18 @@ function Home() {
                     </div>
                     <div className='products'>
                         <div>
-                            <div>
+                            <div className='flex flex-wrap gap-[1rem] mt-5'>
                                 {
                                     trendingProduct.map((curElm) => {
                                         return(
                                             <>
-                                                <div>
-                                                    <div>
-                                                        <img src={curElm.img} alt={curElm.name}/>
+                                                <div className='w-[350px] border-[1px] p-2 rounded-xl'>
+                                                    <div className='flex justify-between'>
+                                                        <img src={curElm.img} alt={curElm.name} className='w-[300px] h-[200px] object-cover'/>
+                                                        <div className='flex flex-col items-end gap-[1rem]'>
+                                                            <div className='bg-gray-200 p-2 text-lg hover:bg-red-700 hover:text-white duration-300'><IoMdEye /></div>
+                                                            <div className='bg-gray-200 p-2 text-lg hover:bg-red-700 hover:text-white duration-300'><FaHeart /></div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </>
