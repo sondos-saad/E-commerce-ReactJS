@@ -18,36 +18,36 @@ function Nav() {
             </div>
         </div>
         <div className='w-[80%] mx-auto flex items-center justify-between py-4'>
-            <h1 className='text-5xl font-bold text-black'>LoGo</h1>
+            <h1 className='text-xl md:text-5xl font-bold text-black'>LoGo</h1>
             <div className='flex items-center gap-1'>
                 <input type='text' value='' placeholder='Search' className='border-[1px] rounded-xl p-2'/>
-                <button className='bg-amber-400 p-2 rounded-xl text-black w-[50px] flex items-center justify-center h-[40px]'><FaSearch /></button>
+                <button className='bg-amber-400 p-2 rounded-xl text-black md:w-[50px] flex items-center justify-center md:h-[40px]'><FaSearch /></button>
             </div>
             {
                 isAuthenticated ?   
                 // logout button
                     <div className='flex items-center justify-center gap-2'>
-                        <div className='font-bold text-xl'>
+                        <div className='font-bold md:text-xl'>
                             <MdLogout />
                         </div>
-                        <div className='font-bold text-lg bg-amber-400 p-2 rounded-xl text-black'>
+                        <div className='font-bold md:text-lg bg-amber-400 p-2 rounded-xl text-black'>
                             <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</button>
                         </div>
                     </div>
                     :
                     // login button
                     <div className='flex items-center justify-center gap-2'>
-                        <div className='font-bold text-xl'>
+                        <div className='font-bold md:text-xl'>
                             <MdLogin />
                         </div>
-                        <div className='font-bold text-lg bg-amber-400 p-2 rounded-xl text-black'>
+                        <div className='font-bold md:text-lg bg-amber-400 p-2 rounded-xl text-black'>
                             <button onClick={() => loginWithRedirect()}>Login</button>
                         </div>
                     </div>
             }
         </div>
         <div className=' bg-black text-white py-2'>
-           <div className='w-[80%] mx-auto flex items-center justify-between'>
+           <div className='w-[80%] mx-auto md:flex items-center justify-between'>
             <div className='flex items-center gap-[.5rem]'>
                         {
                             isAuthenticated ? <>
@@ -79,7 +79,7 @@ function Nav() {
                         <li><Link to='/contact' className='hover:text-amber-400'>Contact</Link></li>
                     </ul>
                 </div>
-                <div className='bg-amber-400 p-2 rounded-xl text-black font-bold'>
+                <div className='bg-amber-400 p-2 rounded-xl text-black font-bold text-center'>
                     <p>flat 10% over all iphone</p>
                 </div>
            </div>
