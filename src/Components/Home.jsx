@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import HomeProduct from './HomeProducts'
 import { IoMdEye } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
+import image from '../assets/iphone-6s.jpg'
 
 function Home() {
     const [trendingProduct, setTrendingProduct]=useState(HomeProduct);
@@ -30,8 +31,8 @@ function Home() {
             </div>
         </div>
         <div className='mt-5'>
-            <div className='w-[80%] mx-auto bg-gray-100 rounded-xl p-4'>
-                <div className='right-box'>
+            <div className='p-4 md:flex gap-2'>
+                <div className='right-box bg-gray-100 rounded-xl p-4 md:w-[60%]'>
                     <div className='md:flex justify-between items-center'>
                         <div>
                             <h2 className='font-bold text-3xl cursor-pointer' onClick={()=> allTrendingProduct()}>TRENDING PRODUCT</h2>
@@ -77,8 +78,24 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className='right-box'>
-
+                <div className='right-box bg-gray-100 rounded-xl p-4'>
+                    <div className='container '>
+                        <div className='testimonial'>
+                            <div className='head'>
+                                <h3 className='text-3xl font-bold text-center pb-4'>OUR TESTIMONIAL</h3>
+                            </div>
+                            <div className='detail bg-white p-5 rounded-xl'>
+                                <div className='imagebox'>
+                                    <img src={image} alt='testimonial' className='w-[80px] h-[80px] mx-auto rounded-full object-cover'/>
+                                </div>
+                                <div className='info mt-5'>
+                                    <h3 className='text-center font-bold '>Stephan robot</h3>
+                                    <h4 className='text-center text-sm text-amber-500'>Web designer</h4>
+                                    <p className='text-center text-sm text-gray-600 '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, commodi!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
