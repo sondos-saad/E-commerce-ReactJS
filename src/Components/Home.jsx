@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import HomeProduct from './HomeProducts'
 import { IoMdEye } from "react-icons/io";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart , FaFacebookF ,FaTwitter, FaInstagram ,FaYoutube} from "react-icons/fa";
 import image from '../assets/iphone-6s.jpg'
 
 function Home() {
@@ -50,13 +50,13 @@ function Home() {
                                     trendingProduct.map((curElm) => {
                                         return(
                                             <>
-                                                <div className='w-[300px]  p-2 rounded-xl bg-white' key={curElm.id}>
+                                                <div className='w-[200px]  p-2 rounded-xl bg-white' key={curElm.id}>
                                                     <div className='flex justify-between relative'>
                                                         {curElm.img && (
                                                                 <img
                                                                     src={curElm.img}
                                                                     alt={curElm.name}
-                                                                    className='h-[200px] object-cover rounded-xl'
+                                                                    className='h-[150px] object-cover rounded-xl'
                                                                 />
                                                             )}
                                                         <div className='flex flex-col items-end gap-[1rem] absolute right-0'>
@@ -78,9 +78,9 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className='right-box bg-gray-100 rounded-xl p-4'>
+                <div className='right-box '>
                     <div className='container '>
-                        <div className='testimonial'>
+                        <div className='testimonial bg-gray-100 rounded-xl p-4'>
                             <div className='head'>
                                 <h3 className='text-3xl font-bold text-center pb-4'>OUR TESTIMONIAL</h3>
                             </div>
@@ -92,6 +92,33 @@ function Home() {
                                     <h3 className='text-center font-bold '>Stephan robot</h3>
                                     <h4 className='text-center text-sm text-amber-500'>Web designer</h4>
                                     <p className='text-center text-sm text-gray-600 '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, commodi!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='newsletter mt-[3rem] bg-gray-100 rounded-xl p-4'>
+                            <div className='head'>
+                                <h3 className='text-3xl font-bold text-center pb-4 tracking-widest'>NEWSLETTER</h3>
+                            </div>
+                            <div className='form flex flex-col justify-center items-center'>
+                                <p className='text-center text-gray-500 mb-2'>Join our malling list</p>
+                                <input type='email' placeholder='Email' autoComplete='off' className='w-full border-[1px] p-2 border-gray-300 rounded-xl mb-2 '/>
+                                <button className='bg-amber-400 p-2 mb-2 rounded-xl'>Subscribe</button>
+                                <div className='icon flex gap-[1rem] my-2'>
+                                    <div className='border-black border-[1px] rounded-full text-lg p-2' >
+                                        <FaFacebookF />
+                                    </div>
+                                    <div className='border-black border-[1px] rounded-full text-lg p-2' >
+                                        <FaTwitter />
+                                    </div>
+                                    <div className='border-black border-[1px] rounded-full text-lg p-2' >
+                                        <FaInstagram />
+                                    </div>
+                                    <div className='border-black border-[1px] rounded-full text-lg p-2' >
+                                        <FaYoutube />
+                                    </div>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
