@@ -75,6 +75,7 @@ function Home() {
                                     })
                                 }
                             </div>
+                            <button className='bg-black text-white p-2 rounded-xl block mx-auto mt-[2rem] cursor-pointer border-[1px] hover:bg-transparent hover:text-black duration-300'>Show More</button>
                         </div>
                     </div>
                 </div>
@@ -116,12 +117,27 @@ function Home() {
                                     <div className='border-black border-[1px] rounded-full text-lg p-2' >
                                         <FaYoutube />
                                     </div>
-                                    
-                                    
-                                    
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className='banners w-[90%] mx-auto'>
+            <div className='container flex gap-[1rem]'>
+                <div className='left_box w-[24%] rounded-xl'>
+                    <div className='box'>
+                        <img src={image} alt='image' className='w-[100%] object-cover rounded-tl-xl rounded-tr-xl'/>
+                    </div>
+                    <div className='box'>
+                        <img src={image} alt='image' className='w-[100%] object-cover rounded-bl-xl rounded-br-xl'/>
+                    </div>
+                </div>
+                <div className='right-box w-[75%]'>
+                    <div className='top flex gap-[3rem]'>
+                        <img src={image} alt='image' className='w-[60%] h-[200px] object-cover'/>
+                        <img src={image} alt='image' className='w-[30%]  h-[200px] object-cover'/>
                     </div>
                 </div>
             </div>
