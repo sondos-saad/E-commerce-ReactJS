@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HomeProduct from './HomeProducts'
 import { IoMdEye } from "react-icons/io";
-import { FaHeart , FaFacebookF ,FaTwitter, FaInstagram ,FaYoutube} from "react-icons/fa";
+import { FaHeart , FaFacebookF ,FaTwitter, FaInstagram ,FaYoutube, FaCartArrowDown} from "react-icons/fa";
 import image from '../assets/iphone-6s.jpg'
 
 function Home() {
     const [trendingProduct, setTrendingProduct]=useState(HomeProduct);
+    const [newProduct, setNewProduct]=useState(HomeProduct);
     // filter of trending product
     const filterCate = (x)=>{
         const filterProduct = HomeProduct.filter((curElm)=>{
@@ -18,6 +19,17 @@ function Home() {
     // all trending product
     const allTrendingProduct=()=>{
         setTrendingProduct(HomeProduct)
+    }
+
+    // Product type
+    useEffect(()=>{
+        productCategory();
+    },[])
+    const productCategory = () => {
+        const newCategory = HomeProduct.filter((x)=>{
+            return x.type === 'new'
+        })
+        setNewProduct(newCategory)
     }
 
   return (
@@ -128,18 +140,52 @@ function Home() {
             <div className='container flex gap-[1rem]'>
                 <div className='left_box w-[24%] rounded-xl'>
                     <div className='box'>
-                        <img src={image} alt='image' className='w-[100%] object-cover rounded-tl-xl rounded-tr-xl'/>
+                        <img src={image} alt='image' className='w-[100%] object-cover  rounded-xl mb-2'/>
                     </div>
                     <div className='box'>
-                        <img src={image} alt='image' className='w-[100%] object-cover rounded-bl-xl rounded-br-xl'/>
+                        <img src={image} alt='image' className='w-[100%] object-cover rounded-xl mb-2'/>
                     </div>
                 </div>
                 <div className='right-box w-[75%]'>
-                    <div className='top flex gap-[3rem]'>
-                        <img src={image} alt='image' className='w-[60%] h-[200px] object-cover'/>
-                        <img src={image} alt='image' className='w-[30%]  h-[200px] object-cover'/>
+                    <div className='top flex gap-[3rem] mb-2'>
+                        <img src={image} alt='image' className='w-[60%] h-[200px] object-cover rounded-xl'/>
+                        <img src={image} alt='image' className='w-[30%]  h-[200px] object-cover rounded-xl'/>
+                    </div>
+                    <div className='bottom'>
+                        <img src={image} alt='image' className='w-[100%] h-[210px] object-cover rounded-xl'/>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div className='product_type'>
+            <div className='container w-[90%] mx-auto'>
+                <div className='box'>
+                    <div className='header'>
+                        <h2>New Product</h2>
+                    </div>
+                </div>
+                {
+                    newProduct.map((curElm)=>{
+                        return (
+                            <>
+                                <div className='productBox'>
+                                    <div className='imag_box'>
+                                        <img src={curElm.img} alt='image' className='w-[100%] h-[210px] object-cover rounded-xl'/>
+                                    </div>
+                                    <div className='details'>
+                                        <h3>{curElm.name}</h3>
+                                        <p>$ {curElm.price}</p>
+                                        <div className='icon'>
+                                            <button><IoMdEye/></button>
+                                            <button><FaHeart/></button>
+                                            <button><FaCartArrowDown/></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                }
             </div>
         </div>
     </section>
