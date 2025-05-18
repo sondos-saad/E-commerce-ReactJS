@@ -8,6 +8,8 @@ import image from '../assets/iphone-6s.jpg'
 function Home() {
     const [trendingProduct, setTrendingProduct]=useState(HomeProduct);
     const [newProduct, setNewProduct]=useState(HomeProduct);
+    const [featuredProduct, setFeaturedProduct]=useState([]);
+    const [topProduct, setTopProduct]=useState([]);
     // filter of trending product
     const filterCate = (x)=>{
         const filterProduct = HomeProduct.filter((curElm)=>{
@@ -29,7 +31,17 @@ function Home() {
         const newCategory = HomeProduct.filter((x)=>{
             return x.type === 'new'
         })
-        setNewProduct(newCategory)
+        setNewProduct(newCategory);
+
+        const featuredCategory = HomeProduct.filter((x)=>{
+            return x.type === 'Featured'
+        })
+        setFeaturedProduct(featuredCategory);
+
+        const topCategory = HomeProduct.filter((x)=>{
+            return x.type === 'Top selling'
+        })
+        setTopProduct(topCategory)
     }
 
   return (
@@ -157,28 +169,27 @@ function Home() {
                 </div>
             </div>
         </div>
-        <div className='product_type'>
-            <div className='container w-[90%] mx-auto'>
-                <div className='box'>
+        <div className='product_type w-[90%] mx-auto'>
+            <div className='container  flex justify-between gap-[1rem] mt-[2rem]'>
+                <div className='box border-[1px] rounded-xl p-2 w-full bg-gray-100'>
                     <div className='header'>
-                        <h2>New Product</h2>
+                        <h2 className='text-4xl font-bold my-5 text-center '>New Product</h2>
                     </div>
-                </div>
-                {
+                    {
                     newProduct.map((curElm)=>{
                         return (
                             <>
-                                <div className='productBox'>
-                                    <div className='imag_box'>
-                                        <img src={curElm.img} alt='image' className='w-[100%] h-[210px] object-cover rounded-xl'/>
+                                <div className='productBox flex gap-[1rem] mb-5'>
+                                    <div className='imag_box '>
+                                        <img src={curElm.img} alt='image' className='w-[100px] h-[100px] object-cover rounded-xl'/>
                                     </div>
                                     <div className='details'>
-                                        <h3>{curElm.name}</h3>
-                                        <p>$ {curElm.price}</p>
-                                        <div className='icon'>
-                                            <button><IoMdEye/></button>
-                                            <button><FaHeart/></button>
-                                            <button><FaCartArrowDown/></button>
+                                        <h3 className='font-bold text-gray-500'>{curElm.name}</h3>
+                                        <p className='text-amber-500'>$ {curElm.price}</p>
+                                        <div className='icon flex gap-[1rem] text-xl mt-3'>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
                                         </div>
                                     </div>
                                 </div>
@@ -186,6 +197,63 @@ function Home() {
                         )
                     })
                 }
+                </div>
+
+                <div className='box border-[1px] rounded-xl p-2 w-full bg-gray-100'>
+                    <div className='header'>
+                        <h2 className='text-4xl font-bold my-5 text-center'>Featured Product</h2>
+                    </div>
+                    {
+                    featuredProduct.map((curElm)=>{
+                        return (
+                            <>
+                                <div className='productBox flex gap-[1rem] mb-5'>
+                                    <div className='imag_box'>
+                                        <img src={curElm.img} alt='image' className='w-[100px] h-[100px] object-cover rounded-xl'/>
+                                    </div>
+                                    <div className='details'>
+                                        <h3 className='font-bold text-gray-500'>{curElm.name}</h3>
+                                        <p className='text-amber-500'>$ {curElm.price}</p>
+                                        <div className='icon flex gap-[1rem] text-xl mt-3'>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                }
+                </div>
+
+                <div className='box border-[1px] rounded-xl p-2 w-full bg-gray-100'>
+                    <div className='header'>
+                        <h2 className='text-4xl font-bold my-5 text-center'>Top selling</h2>
+                    </div>
+                    {
+                    topProduct.map((curElm)=>{
+                        return (
+                            <>
+                                <div className='productBox flex gap-[1rem] mb-5'>
+                                    <div className='imag_box'>
+                                        <img src={curElm.img} alt='image' className='w-[100px] h-[100px] object-cover rounded-xl'/>
+                                    </div>
+                                    <div className='details'>
+                                        <h3 className='font-bold text-gray-500'>{curElm.name}</h3>
+                                        <p className='text-amber-500'>$ {curElm.price}</p>
+                                        <div className='icon flex gap-[1rem] text-xl mt-3'>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
+                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                }
+                </div>
             </div>
         </div>
     </section>

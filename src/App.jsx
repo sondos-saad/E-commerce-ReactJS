@@ -2,6 +2,7 @@ import {BrowserRouter} from 'react-router-dom'
 import './App.css'
 import Nav from './Components/nav'
 import Rout from './Components/Rout'
+import Footer from './Components/Footer'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         <BrowserRouter>
             <Nav/>
             <Rout/>
+            <Footer/>
         </BrowserRouter>
     </>
   )
