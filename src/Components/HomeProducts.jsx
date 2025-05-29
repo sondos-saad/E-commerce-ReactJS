@@ -7,7 +7,7 @@ const HomeProduct = [
         name:"laptop1",
         price:"300",
         img: photo,
-        cat:"",
+        cat:"tv",
         type:"new",
 
     },
@@ -16,7 +16,7 @@ const HomeProduct = [
         name:"laptop2",
         price:"300",
         img: photo2,
-        cat:"",
+        cat:"laptop",
         type:"Featured",
 
     },
@@ -25,7 +25,7 @@ const HomeProduct = [
         name:"laptop3",
         price:"300",
         img: photo,
-        cat:"",
+        cat:"mobile",
         type:"Top selling",
 
     },
@@ -43,7 +43,7 @@ const HomeProduct = [
         name:"laptop5",
         price:"300",
         img: photo,
-        cat:"",
+        cat:"laptop",
         type:"Featured",
 
     },
@@ -52,7 +52,7 @@ const HomeProduct = [
         name:"laptop6",
         price:"300",
         img: photo2,
-        cat:"",
+        cat:"tv",
         type:"Top selling",
 
     },
@@ -61,7 +61,7 @@ const HomeProduct = [
         name:"laptop7",
         price:"300",
         img: photo,
-        cat:"",
+        cat:"laptop",
         type:"new",
 
     },
@@ -70,7 +70,7 @@ const HomeProduct = [
         name:"laptop8",
         price:"300",
         img: photo2,
-        cat:"",
+        cat:"mobile",
         type:"Featured",
 
     },
