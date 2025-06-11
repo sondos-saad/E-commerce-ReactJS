@@ -3,12 +3,12 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Shop from './Shop'
 
-function Rout() {
+function Rout({shop}) {
   return (
     <>
         <Routes>
-            <Route path='/' Component={Home}/>
-            <Route path='shop' Component={Shop}/>
+            <Route path='/' element={<Home />}/>
+            <Route path='shop' element={<Shop shop={shop} />}/>
         </Routes>
       
     </>
