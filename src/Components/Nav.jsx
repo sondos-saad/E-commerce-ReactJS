@@ -4,9 +4,10 @@ import { FaSearch ,FaUserAlt} from "react-icons/fa";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 
-function Nav() {
+function Nav({search, setSearch , searchProduct}) {
     const { loginWithRedirect } = useAuth0();
     const { logout , user, isAuthenticated} = useAuth0();
+
   return (
     <div className='w-full'>
         <div className=' flex p-[10px] bg-amber-400'>
@@ -20,8 +21,8 @@ function Nav() {
         <div className='w-[80%] mx-auto flex items-center justify-between py-4'>
             <h1 className='text-xl md:text-5xl font-bold text-black'>LoGo</h1>
             <div className='flex items-center gap-1'>
-                <input type='text' value='' placeholder='Search' className='border-[1px] rounded-xl p-2'/>
-                <button className='bg-amber-400 p-2 rounded-xl text-black md:w-[50px] flex items-center justify-center md:h-[40px]'><FaSearch /></button>
+                <input type='text' value={search} placeholder='Search' onChange={(e) => setSearch(e.target.value) } className='border-[1px] rounded-xl p-2'/>
+                <button onClick={searchProduct} className='bg-amber-400 p-2 rounded-xl text-black md:w-[50px] flex items-center justify-center md:h-[40px]'><FaSearch /></button>
             </div>
             {
                 isAuthenticated ?   

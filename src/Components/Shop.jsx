@@ -1,7 +1,8 @@
 import React from 'react'
 import photo2 from '../assets/laptop1.jpg';
+import { FaEye, FaHeart } from 'react-icons/fa';
 
-function Shop({shop}) {
+function Shop({shop, Filter ,allCateFilter}) {
   return (
     <section className='shop'>
         
@@ -16,11 +17,12 @@ function Shop({shop}) {
                         </div>
                         <div className='box p-2'>
                             <ul >
-                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black'># tv</li>
-                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black'># mobile</li>
-                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black'># laptop</li>
-                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black'># headphone</li>
-                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black'># watch</li>
+                                <li onClick={() => allCateFilter ()} className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black'># All Product</li>
+                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black' onClick={() => Filter ("mobile")}># mobile</li>
+                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black' onClick={() => Filter ("tv")}># tv</li>
+                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black' onClick={() => Filter ("laptop")}># laptop</li>
+                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black' onClick={() => Filter ("headphone")}># headphone</li>
+                                <li className='text-lg uppercase cursor-pointer font-semibold mb-2 text-gray-500 hover:text-black' onClick={() => Filter ("watch")}># watch</li>
                             </ul>
                         </div>
                     </div>
@@ -42,9 +44,22 @@ function Shop({shop}) {
                             {
                                 shop.map((curEle)=>{
                                     return(
-                                        <div className='box w-[250px] h-[400px] border-gray-200 border rounded-2xl'>
+                                        <div className='box w-[250px] p-2 border-gray-200 border rounded-2xl relative'>
                                             <div className='img'>
                                                 <img src={curEle.img} alt='photo' className='rounded-2xl w-[80%] mx-auto mt-2'/>
+                                                <div className='icon absolute top-5 left-0'>
+                                                    <ul>
+                                                        <li className='bg-amber-400 shadow-2xl w-fit p-2 mb-2'>
+                                                            <FaHeart className=''/>
+                                                        </li>
+                                                        <li className='bg-amber-400 shadow-2xl w-fit p-2 mb-2'><FaEye/></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className='details'>
+                                                <h3 className='mt-3 text-center font-bold text-xl'>{curEle.name}</h3>
+                                                <p className='text-amber-500 text-center mt-2'>$ {curEle.price}</p>
+                                                <button className='bg-amber-400 p-2 rounded-xl mt-5 ml-20'>Add To Cart</button>
                                             </div>
                                         </div>
                                     )
