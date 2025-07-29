@@ -2,13 +2,15 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Shop from './Shop'
+import Cart from './Cart'
 
-function Rout({shop , Filter, allCateFilter}) {
+function Rout({shop , Filter, allCateFilter , addToCart}) {
   return (
     <>
         <Routes>
             <Route path='/' element={<Home />}/>
-            <Route path='shop' element={<Shop shop={shop} Filter={Filter} allCateFilter={allCateFilter} />}/>
+            <Route path='/cart' element={<Cart />}/>
+            <Route path='shop' element={<Shop shop={shop} Filter={Filter} allCateFilter={allCateFilter} addToCart={addToCart}/>}/>
         </Routes>
       
     </>

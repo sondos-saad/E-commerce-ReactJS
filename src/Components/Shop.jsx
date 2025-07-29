@@ -2,7 +2,7 @@ import React from 'react'
 import photo2 from '../assets/laptop1.jpg';
 import { FaEye, FaHeart } from 'react-icons/fa';
 
-function Shop({shop, Filter ,allCateFilter}) {
+function Shop({shop, Filter ,allCateFilter, addToCart}) {
   return (
     <section className='shop'>
         
@@ -59,7 +59,7 @@ function Shop({shop, Filter ,allCateFilter}) {
                                             <div className='details'>
                                                 <h3 className='mt-3 text-center font-bold text-xl'>{curEle.name}</h3>
                                                 <p className='text-amber-500 text-center mt-2'>$ {curEle.price}</p>
-                                                <button className='bg-amber-400 p-2 rounded-xl mt-5 ml-20'>Add To Cart</button>
+                                                <button className='bg-amber-400 p-2 rounded-xl mt-5 ml-20' onClick={() => addToCart (curEle)}>Add To Cart</button>
                                             </div>
                                         </div>
                                     )
