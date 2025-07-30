@@ -33,16 +33,24 @@ function App() {
                 setShop(searchFilter)
             }
     }
+   
    const addToCart = (product) => {
-        setCart([...cart, {...product , qty:1} ])
-        
+        const exist = cart.find((x) => {
+            return x.id === product.id
+        })
+        if(exist){
+            alert("this product is already added in cart")
+        }else{
+            setCart([...cart, {...product , qty:1} ]);
+            alert("Added To Cart")
+        }
    }
 
   return (
     <>
         <BrowserRouter>
             <Nav search={search} setSearch={setSearch} searchProduct={searchProduct}/>
-            <Rout shop={shop} Filter={Filter} allCateFilter={allCateFilter} addToCart={addToCart}/>
+            <Rout cart={cart} shop={shop} Filter={Filter} allCateFilter={allCateFilter} addToCart={addToCart}/>
             <Footer/>
         </BrowserRouter>
     </>
