@@ -3,7 +3,39 @@ import { Link } from 'react-router-dom'
 import { AiOutlineClose } from 'react-icons/ai';
 
 
-function Cart({cart}) {
+function Cart({cart, setCart}) {
+    // increase quantity 
+    const incqty = (product)=>{
+        const exist = cart.find((x)=>{
+            return x.id === product.id
+        })
+        setCart(cart.map((curEle)=>{
+            return curEle.id === product.id ? {...exist, qty: exist.qty + 1} : curEle
+        }))
+    }
+
+        // decrease quantity 
+    const decqty = (product)=>{
+        const exist = cart.find((x)=>{
+            return x.id === product.id
+        })
+        setCart(cart.map((curEle)=>{
+            return curEle.id === product.id ? {...exist, qty: exist.qty - 1} : curEle
+        }))
+    }
+
+    // removeProduct
+    const removeProduct = (product) => {
+        const exist = cart.find((x)=>{
+            return x.id === product.id
+        })
+        if(exist.qty > 0){
+            setCart(cart.filter((curEle)=>{
+               return curEle.id !== product.id
+            }))
+        }
+    }
+
   return (
     <section className='cart w-[80%] mx-auto py-2'>
         <h3 className='text-3xl font-bold uppercase tracking-wide'># cart</h3>
@@ -20,12 +52,12 @@ function Cart({cart}) {
             </div>
             </>
         }
-        <div className='container my-[2rem] bg-gray-200 p-2 rounded-xl'>
+        <div className='container'>
             {
                 cart.map((curElm) => {
                     return(
                         <>
-                        <div className='box flex items-center gap-[2rem]'>
+                        <div className='box flex items-center gap-[2rem]  my-[2rem] bg-gray-200 p-2 rounded-xl'>
                             <div className='img_box w-[20%]'>
                                 <img src={curElm.img} alt='photo' className='rounded-2xl'/>
                             </div>
@@ -36,13 +68,13 @@ function Cart({cart}) {
                                     <p className='my-2'>Price: ${curElm.price}</p>
                                     <p className='my-2 pt-2 border-t-[1px] text-xl'>Total: ${curElm.price * curElm.qty}</p>
                                 </div>
-                                <div className='quantity flex gap-[1rem] items-center mb-4'>
-                                    <button className='font-bold bg-amber-500 w-[40px] h-[40px] rounded-full cursor-pointer'>+</button>
-                                    <input type='number' value={curElm.qty} className='border rounded-2xl p-1 w-[50px] text-center '></input>
-                                    <button className='font-bold bg-amber-500 w-[40px] h-[40px] rounded-full cursor-pointer'>-</button>
+                                <div className='quantity flex gap-[1rem] items-center mb-4 bg-amber-500'>
+                                    <button onClick={() => incqty (curElm)} className='font-bold p-3 cursor-pointer'>+</button>
+                                    <input type='number' value={curElm.qty} className='p-1 w-[80px] text-center bg-white'></input>
+                                    <button onClick={() => decqty (curElm)} className='font-bold p-3 cursor-pointer'>-</button>
                                 </div>
                                 
-                                <div className='icon'>
+                                <div onClick={()=> removeProduct(curElm)} className='icon'>
                                         <AiOutlineClose className='font-bold text-xl cursor-pointer'/>
                                 </div>
                             </div>

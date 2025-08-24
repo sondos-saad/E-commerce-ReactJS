@@ -50,7 +50,7 @@ function App() {
     <>
         <BrowserRouter>
             <Nav search={search} setSearch={setSearch} searchProduct={searchProduct}/>
-            <Rout cart={cart} shop={shop} Filter={Filter} allCateFilter={allCateFilter} addToCart={addToCart}/>
+            <Rout setCart={setCart} cart={cart} shop={shop} Filter={Filter} allCateFilter={allCateFilter} addToCart={addToCart}/>
             <Footer/>
         </BrowserRouter>
     </>
