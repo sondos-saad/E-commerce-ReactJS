@@ -36,6 +36,9 @@ function Cart({cart, setCart}) {
         }
     }
 
+    // total price
+    const total = cart.reduce((price, item) => price + item.qty * item.price, 0)
+
   return (
     <section className='cart w-[80%] mx-auto py-2'>
         <h3 className='text-3xl font-bold uppercase tracking-wide'># cart</h3>
@@ -82,6 +85,17 @@ function Cart({cart, setCart}) {
                         </>
                     )
                 })
+            }
+        </div>
+        <div className='bottom flex flex-col justify-center items-center gap-[1rem]'>
+            {
+                cart.length > 0 && 
+                <>
+                    <div className='total font-bold text-xl'>
+                        <h4 className='uppercase'>Sub Total: ${total}</h4>
+                    </div>
+                    <button className='bg-amber-500 p-4 rounded-xl font-bold text-lg cursor-pointer'>Checkout</button>
+                </>
             }
         </div>
     </section>
