@@ -5,7 +5,7 @@ import { IoMdEye } from "react-icons/io";
 import { FaHeart , FaFacebookF ,FaTwitter, FaInstagram ,FaYoutube, FaCartArrowDown} from "react-icons/fa";
 import image from '../assets/iphone-6s.jpg'
 
-function Home() {
+function Home({addToCart}) {
     const [trendingProduct, setTrendingProduct]=useState(HomeProduct);
     const [newProduct, setNewProduct]=useState(HomeProduct);
     const [featuredProduct, setFeaturedProduct]=useState([]);
@@ -91,7 +91,7 @@ function Home() {
                                                     <div className='info pt-[1rem]'>
                                                         <h3 className='font-bold text-xl'>{curElm.name}</h3>
                                                         <p className='text-red-700 font-bold'>{curElm.price}$</p>
-                                                        <button className='bg-amber-400 font-bold p-2 rounded-xl w-full mt-5 mb-2'>Add to card</button>
+                                                        <button onClick={() => addToCart (curElm)} className='bg-amber-400 font-bold p-2 rounded-xl w-full mt-5 mb-2'>Add to card</button>
                                                     </div>
                                                 </div>
                                             </>
@@ -189,7 +189,7 @@ function Home() {
                                         <div className='icon flex gap-[1rem] text-xl mt-3'>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
-                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
+                                            <button onClick={() => addToCart (curElm)}  className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
                                         </div>
                                     </div>
                                 </div>
@@ -217,7 +217,7 @@ function Home() {
                                         <div className='icon flex gap-[1rem] text-xl mt-3'>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
-                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
+                                            <button onClick={() => addToCart (curElm)}  className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@ function Home() {
                                         <div className='icon flex gap-[1rem] text-xl mt-3'>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
-                                            <button className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
+                                            <button onClick={() => addToCart (curElm)}  className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
                                         </div>
                                     </div>
                                 </div>

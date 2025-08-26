@@ -4,8 +4,10 @@ import { FaEye, FaHeart } from 'react-icons/fa';
 
 function Shop({shop, Filter ,allCateFilter, addToCart}) {
   return (
-    <section className='shop'>
-        
+
+    
+    <section className='shop relative'>
+        <div className='w-[900px] h-[500px] fixed top-[100px] left-[120px] bg-white z-10 shadow-2xl rounded-2xl border-2'></div>
         <div className='container w-[90%] mx-auto'>
             <h2 className='text-4xl font-bold '># shop</h2>
             <p className='text-gray-500'>Home . Shop</p>
