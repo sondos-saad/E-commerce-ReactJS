@@ -1,13 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import photo2 from '../assets/laptop1.jpg';
 import { FaEye, FaHeart } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
 
 function Shop({shop, Filter ,allCateFilter, addToCart}) {
-  return (
+    // toggle product details
+    const [showDetail, setShowDetail] = useState(false);
+    // detail page data
+    const [detail, setDetail] = useState([])
 
-    
+    // show details box
+    const detailPage = (product) => {
+        const detailsData = ([{product}]);
+        const productDetails = detailsData[0]['product'];
+        setDetail(productDetails)
+        setShowDetail(true);
+    }
+    // close details box
+    const closeDetail = () => {
+        setShowDetail(false)
+    }
+
+  return (
     <section className='shop relative'>
-        <div className='w-[900px] h-[500px] fixed top-[100px] left-[120px] bg-white z-10 shadow-2xl rounded-2xl border-2'></div>
+        {
+            showDetail ? 
+            <>
+                <div className='w-[900px] h-[500px] fixed top-[100px] left-[120px] bg-white z-10 shadow-2xl rounded-2xl border-2 p-3'>
+                    <button onClick={closeDetail} className='float-right cursor-pointer'><AiOutlineClose/></button>
+                    <div className='container'>
+                        <div className='img_box'>
+                            <img src={detail.img} alt='photo'/>
+                        </div>
+                    </div>
+                </div>
+            </> : null
+        }
         <div className='container w-[90%] mx-auto'>
             <h2 className='text-4xl font-bold '># shop</h2>
             <p className='text-gray-500'>Home . Shop</p>
@@ -54,7 +82,7 @@ function Shop({shop, Filter ,allCateFilter, addToCart}) {
                                                         <li className='bg-amber-400 shadow-2xl w-fit p-2 mb-2'>
                                                             <FaHeart className=''/>
                                                         </li>
-                                                        <li className='bg-amber-400 shadow-2xl w-fit p-2 mb-2'><FaEye/></li>
+                                                        <li onClick={()=> detailPage (curEle)} className='bg-amber-400 shadow-2xl w-fit p-2 mb-2'><FaEye/></li>
                                                     </ul>
                                                 </div>
                                             </div>
