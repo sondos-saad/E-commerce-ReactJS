@@ -26,11 +26,19 @@ function Shop({shop, Filter ,allCateFilter, addToCart}) {
         {
             showDetail ? 
             <>
-                <div className='w-[900px] h-[500px] fixed top-[100px] left-[120px] bg-white z-10 shadow-2xl rounded-2xl border-2 p-3'>
+                <div className='layout w-full h-full bg-gray-200/80 absolute top-0 left-0 right-0 z-10'></div>
+                <div className='w-[800px] fixed top-[40%] left-[30%] bg-white z-10 shadow-2xl rounded-2xl border-2 p-3'>
                     <button onClick={closeDetail} className='float-right cursor-pointer'><AiOutlineClose/></button>
-                    <div className='container'>
-                        <div className='img_box'>
-                            <img src={detail.img} alt='photo'/>
+                    <div className='container flex gap-[1rem]'>
+                        <div className='img_box w-[45%]'>
+                            <img src={detail.img} className='rounded-xl' alt='photo'/>
+                        </div>
+                        <div className='info'>
+                            <h4 className='text-sm text-amber-500'>#{detail.cat}</h4>
+                            <h2 className='text-2xl font-bold my-2'>{detail.name}</h2>
+                            <p className='text-gray-500'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, optio!</p>
+                            <h3 className='text-xl font-bold mt-2'>${detail.price}</h3>
+                            <button onClick={() => addToCart (detail)} className='bg-amber-400 p-2 rounded-xl font-bold mt-2 cursor-pointer'>Add To Cart</button>
                         </div>
                     </div>
                 </div>
