@@ -40,12 +40,12 @@ function Cart({cart, setCart}) {
     const total = cart.reduce((price, item) => price + item.qty * item.price, 0)
 
   return (
-    <section className='cart w-[80%] mx-auto py-2'>
+    <section className='w-[80%] mx-auto py-2'>
         <h3 className='text-3xl font-bold uppercase tracking-wide'># cart</h3>
         {
             cart.length === 0 && 
             <>
-            <div className='empty_cart'>
+            <div >
                 <h2 className='text-center uppercase text-xl tracking-wide'>Your Shopping Cart Is Empty</h2>
                 <Link to={'/shop'}>
                     <div className='flex justify-center mt-[2rem]'>
@@ -55,16 +55,16 @@ function Cart({cart, setCart}) {
             </div>
             </>
         }
-        <div className='container'>
+        <div >
             {
                 cart.map((curElm) => {
                     return(
                         <>
-                        <div className='box flex items-center gap-[2rem]  my-[2rem] bg-gray-200 p-2 rounded-xl'>
-                            <div className='img_box w-[20%]'>
+                        <div className=' md:flex items-center gap-[2rem]  my-[2rem] bg-gray-200 p-2 rounded-xl'>
+                            <div className='w-[90%] md:w-[20%]'>
                                 <img src={curElm.img} alt='photo' className='rounded-2xl'/>
                             </div>
-                            <div className='details flex justify-between items-center gap-[2rem] w-[75%]'>
+                            <div className=' md:flex justify-between items-center gap-[2rem] w-[75%]'>
                                 <div className='info'>
                                     <h4 className='text-amber-500 font-bold text-lg'>{curElm.cat}</h4>
                                     <h3 className='text-2xl font-bold tracking-wide'>{curElm.name}</h3>
@@ -87,11 +87,11 @@ function Cart({cart, setCart}) {
                 })
             }
         </div>
-        <div className='bottom flex flex-col justify-center items-center gap-[1rem]'>
+        <div className=' flex flex-col justify-center items-center gap-[1rem]'>
             {
                 cart.length > 0 && 
                 <>
-                    <div className='total font-bold text-xl'>
+                    <div className=' font-bold text-xl'>
                         <h4 className='uppercase'>Sub Total: ${total}</h4>
                     </div>
                     <button className='bg-amber-500 p-4 rounded-xl font-bold text-lg cursor-pointer'>Checkout</button>

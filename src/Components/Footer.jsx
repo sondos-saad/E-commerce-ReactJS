@@ -6,8 +6,8 @@ import { FaWallet } from 'react-icons/fa6'
 function Footer() {
   return (
     <footer className=' bg-black mt-9'>
-      <div className='container w-[90%] mx-auto text-white py-[2rem] flex gap-[2rem] flex-wrap'>
-        <div className='left-box md:border-r-[1px] md:w-[35%] pr-2'>
+      <div className='w-[90%] mx-auto text-white py-[2rem] flex gap-[2rem] flex-wrap'>
+        <div className=' md:border-r-[1px] md:w-[35%] pr-2'>
             <div className='box flex items-center gap-5 mb-5'>
                 <div className='icon_box text-2xl text-amber-400'>
                     <FaPiggyBank/>
@@ -45,13 +45,13 @@ function Footer() {
                 </div>
             </div>
         </div>
-        <div className='right_box pl-5 md:w-[60%]'>
-            <div className='header'>
+        <div className=' pl-5 md:w-[60%]'>
+            <div >
                 <h1 className='text-xl md:text-5xl font-bold text-white text-center'>LoGo</h1>
                 <p className='mt-2 text-sm text-gray-300 text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eveniet hic cum. Laudantium, et. </p>
             </div>
-            <div className='bottom flex justify-between gap-[1rem] flex-wrap md:flex-nowrap mt-9 '>
-                <div className='box md:w-[32%] mx-auto'>
+            <div className=' flex justify-between gap-[1rem] flex-wrap md:flex-nowrap mt-9 '>
+                <div className=' md:w-[32%] mx-auto'>
                     <h3 className='font-bold text-xl mb-2'>Your Account</h3>
                     <ul className='text-gray-300 text-sm'>
                         <li>About us</li>
@@ -60,7 +60,7 @@ function Footer() {
                         <li>Sales</li>
                     </ul>
                 </div>
-                <div className='box md:w-[32%] mx-auto'>
+                <div className=' md:w-[32%] mx-auto'>
                     <h3 className='font-bold text-xl mb-2'>Products</h3>
                     <ul className='text-gray-300 text-sm'>
                         <li>Delivery</li>
@@ -69,7 +69,7 @@ function Footer() {
                         <li>Old product</li>
                     </ul>
                 </div>
-                <div className='box md:w-[32%] mx-auto'>
+                <div className=' md:w-[32%] mx-auto'>
                     <h3 className='font-bold text-xl mb-2'>Contact Us</h3>
                     <ul className='text-gray-300 text-sm'>
                         <li>Adress: Lorem ipsum dolor sit amet .</li>

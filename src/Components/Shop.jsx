@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import photo2 from '../assets/laptop1.jpg';
+import photo2 from '../assets/e.jpg';
 import { FaEye, FaHeart } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 

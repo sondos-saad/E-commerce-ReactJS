@@ -4,6 +4,8 @@ import HomeProduct from './HomeProducts'
 import { IoMdEye } from "react-icons/io";
 import { FaHeart , FaFacebookF ,FaTwitter, FaInstagram ,FaYoutube, FaCartArrowDown} from "react-icons/fa";
 import image from '../assets/iphone-6s.jpg'
+import image2 from '../assets/e.jpg'
+
 
 function Home({addToCart}) {
     const [trendingProduct, setTrendingProduct]=useState(HomeProduct);
@@ -56,7 +58,7 @@ function Home({addToCart}) {
         </div>
         <div className='mt-5'>
             <div className='p-4 md:flex gap-2'>
-                <div className='right-box bg-gray-100 rounded-xl p-4 md:w-[60%]'>
+                <div className=' bg-gray-100 rounded-xl p-4 md:w-[60%]'>
                     <div className='md:flex justify-between items-center'>
                         <div>
                             <h2 className='font-bold text-3xl cursor-pointer' onClick={()=> allTrendingProduct()}>TRENDING PRODUCT</h2>
@@ -67,7 +69,7 @@ function Home({addToCart}) {
                             <h3 className='font-semibold text-lg hover:text-purple-500 duration-300' onClick={()=> filterCate('Top selling')}>Top selling</h3>
                         </div>
                     </div>
-                    <div className='products'>
+                    <div>
                         <div>
                             <div className='flex flex-wrap gap-[1rem] items-center justify-center mt-5'>
                                 {
@@ -88,7 +90,7 @@ function Home({addToCart}) {
                                                             <div className='bg-amber-400 p-2 text-lg hover:bg-red-700 hover:text-white duration-300'><FaHeart /></div>
                                                         </div>
                                                     </div>
-                                                    <div className='info pt-[1rem]'>
+                                                    <div className=' pt-[1rem]'>
                                                         <h3 className='font-bold text-xl'>{curElm.name}</h3>
                                                         <p className='text-red-700 font-bold'>{curElm.price}$</p>
                                                         <button onClick={() => addToCart (curElm)} className='bg-amber-400 font-bold p-2 rounded-xl w-full mt-5 mb-2'>Add to card</button>
@@ -103,32 +105,32 @@ function Home({addToCart}) {
                         </div>
                     </div>
                 </div>
-                <div className='right-box '>
-                    <div className='container '>
-                        <div className='testimonial bg-gray-100 rounded-xl p-4'>
-                            <div className='head'>
+                <div>
+                    <div>
+                        <div className=' bg-gray-100 rounded-xl p-4'>
+                            <div >
                                 <h3 className='text-3xl font-bold text-center pb-4'>OUR TESTIMONIAL</h3>
                             </div>
-                            <div className='detail bg-white p-5 rounded-xl'>
-                                <div className='imagebox'>
+                            <div className=' bg-white p-5 rounded-xl'>
+                                <div >
                                     <img src={image} alt='testimonial' className='w-[80px] h-[80px] mx-auto rounded-full object-cover'/>
                                 </div>
-                                <div className='info mt-5'>
+                                <div className=' mt-5'>
                                     <h3 className='text-center font-bold '>Stephan robot</h3>
                                     <h4 className='text-center text-sm text-amber-500'>Web designer</h4>
                                     <p className='text-center text-sm text-gray-600 '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, commodi!</p>
                                 </div>
                             </div>
                         </div>
-                        <div className='newsletter mt-[3rem] bg-gray-100 rounded-xl p-4'>
+                        <div className=' mt-[3rem] bg-gray-100 rounded-xl p-4'>
                             <div className='head'>
                                 <h3 className='text-3xl font-bold text-center pb-4 tracking-widest'>NEWSLETTER</h3>
                             </div>
-                            <div className='form flex flex-col justify-center items-center'>
+                            <div className=' flex flex-col justify-center items-center'>
                                 <p className='text-center text-gray-500 mb-2'>Join our malling list</p>
                                 <input type='email' placeholder='Email' autoComplete='off' className='w-full border-[1px] p-2 border-gray-300 rounded-xl mb-2 '/>
                                 <button className='bg-amber-400 p-2 mb-2 rounded-xl'>Subscribe</button>
-                                <div className='icon flex gap-[1rem] my-2'>
+                                <div className=' flex gap-[1rem] my-2'>
                                     <div className='border-black border-[1px] rounded-full text-lg p-2' >
                                         <FaFacebookF />
                                     </div>
@@ -148,42 +150,36 @@ function Home({addToCart}) {
                 </div>
             </div>
         </div>
-        <div className='banners w-[90%] mx-auto'>
-            <div className='container flex gap-[1rem]'>
-                <div className='left_box w-[24%] rounded-xl'>
-                    <div className='box'>
-                        <img src={image} alt='image' className='w-[100%] object-cover  rounded-xl mb-2'/>
-                    </div>
-                    <div className='box'>
-                        <img src={image} alt='image' className='w-[100%] object-cover rounded-xl mb-2'/>
+        <div className='w-[90%] mx-auto'>
+            <div className='flex gap-[1rem]'>
+                <div className=' w-[24%] rounded-xl'>
+                    <div >
+                        <img src={image2} alt='image' className='h-[200px] w-[100%] object-cover  rounded-xl mb-2'/>
                     </div>
                 </div>
-                <div className='right-box w-[75%]'>
-                    <div className='top flex gap-[3rem] mb-2'>
-                        <img src={image} alt='image' className='w-[60%] h-[200px] object-cover rounded-xl'/>
-                        <img src={image} alt='image' className='w-[30%]  h-[200px] object-cover rounded-xl'/>
-                    </div>
-                    <div className='bottom'>
-                        <img src={image} alt='image' className='w-[100%] h-[210px] object-cover rounded-xl'/>
+                <div className=' w-[75%]'>
+                    <div className='flex gap-[3rem] mb-2'>
+                        <img src={image2} alt='image' className='w-[60%] h-[200px] rounded-xl'/>
+                        <img src={image2} alt='image' className='w-[30%]  h-[200px] object-cover rounded-xl'/>
                     </div>
                 </div>
             </div>
         </div>
-        <div className='product_type w-[90%] mx-auto'>
-            <div className='container  flex justify-between gap-[1rem] mt-[2rem]'>
-                <div className='box border-[1px] rounded-xl p-2 w-full bg-gray-100'>
-                    <div className='header'>
+        <div className='w-[90%] mx-auto'>
+            <div className='md:flex justify-between gap-[1rem] mt-[2rem]'>
+                <div className=' border-[1px] rounded-xl p-2 w-full bg-gray-100 mb-2'>
+                    <div >
                         <h2 className='text-4xl font-bold my-5 text-center '>New Product</h2>
                     </div>
                     {
                     newProduct.map((curElm)=>{
                         return (
                             <>
-                                <div className='productBox flex gap-[1rem] mb-5'>
+                                <div className='flex gap-[1rem] mb-5'>
                                     <div className='imag_box '>
                                         <img src={curElm.img} alt='image' className='w-[100px] h-[100px] object-cover rounded-xl'/>
                                     </div>
-                                    <div className='details'>
+                                    <div>
                                         <h3 className='font-bold text-gray-500'>{curElm.name}</h3>
                                         <p className='text-amber-500'>$ {curElm.price}</p>
                                         <div className='icon flex gap-[1rem] text-xl mt-3'>
@@ -199,7 +195,7 @@ function Home({addToCart}) {
                 }
                 </div>
 
-                <div className='box border-[1px] rounded-xl p-2 w-full bg-gray-100'>
+                <div className='border-[1px] rounded-xl p-2 w-full bg-gray-100 mb-2'>
                     <div className='header'>
                         <h2 className='text-4xl font-bold my-5 text-center'>Featured Product</h2>
                     </div>
@@ -207,14 +203,14 @@ function Home({addToCart}) {
                     featuredProduct.map((curElm)=>{
                         return (
                             <>
-                                <div className='productBox flex gap-[1rem] mb-5'>
+                                <div className='flex gap-[1rem] mb-5'>
                                     <div className='imag_box'>
                                         <img src={curElm.img} alt='image' className='w-[100px] h-[100px] object-cover rounded-xl'/>
                                     </div>
-                                    <div className='details'>
+                                    <div >
                                         <h3 className='font-bold text-gray-500'>{curElm.name}</h3>
                                         <p className='text-amber-500'>$ {curElm.price}</p>
-                                        <div className='icon flex gap-[1rem] text-xl mt-3'>
+                                        <div className=' flex gap-[1rem] text-xl mt-3'>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><IoMdEye/></button>
                                             <button className='border-[1px] rounded-full p-2 text-gray-500'><FaHeart/></button>
                                             <button onClick={() => addToCart (curElm)}  className='border-[1px] rounded-full p-2 text-gray-500'><FaCartArrowDown/></button>
@@ -227,19 +223,19 @@ function Home({addToCart}) {
                 }
                 </div>
 
-                <div className='box border-[1px] rounded-xl p-2 w-full bg-gray-100'>
-                    <div className='header'>
+                <div className='border-[1px] rounded-xl p-2 w-full bg-gray-100 mb-2'>
+                    <div >
                         <h2 className='text-4xl font-bold my-5 text-center'>Top selling</h2>
                     </div>
                     {
                     topProduct.map((curElm)=>{
                         return (
                             <>
-                                <div className='productBox flex gap-[1rem] mb-5'>
+                                <div className='flex gap-[1rem] mb-5'>
                                     <div className='imag_box'>
                                         <img src={curElm.img} alt='image' className='w-[100px] h-[100px] object-cover rounded-xl'/>
                                     </div>
-                                    <div className='details'>
+                                    <div>
                                         <h3 className='font-bold text-gray-500'>{curElm.name}</h3>
                                         <p className='text-amber-500'>$ {curElm.price}</p>
                                         <div className='icon flex gap-[1rem] text-xl mt-3'>
